@@ -1,0 +1,5 @@
+language: go
+addons:
+  apt:
+    packages:
+      - libmagic-dev
