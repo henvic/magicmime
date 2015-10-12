@@ -22,14 +22,6 @@ import (
 	"testing"
 )
 
-func TestDbNotOpenFailure(t *testing.T) {
-	_, err := TypeByFile("anotherMissingFile.txt")
-
-	if err.Error() != "Magic database is not open" {
-		panic(err)
-	}
-}
-
 // Tests a gif file.
 func TestGifFile(t *testing.T) {
 	testFile(t, "./testdata/sample.gif", "image/gif")
