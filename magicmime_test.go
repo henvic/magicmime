@@ -93,12 +93,12 @@ func testFile(tb testing.TB, path string, expected string) {
 	}
 }
 
-// func TestMissingFile(t *testing.T) {
-// 	_, err := TypeByFile("missingFile.txt")
-// 	if err == nil {
-// 		t.Error("no error for missing file")
-// 	}
-// }
+func TestMissingFile(t *testing.T) {
+	_, err := TypeByFile("missingFile.txt")
+	if err == nil {
+		t.Error("no error for missing file")
+	}
+}
 
 func BenchmarkZipFile(b *testing.B) {
 	for i := 0; i < b.N; i++ {
