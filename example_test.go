@@ -12,21 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// +build linux darwin, !cgo
+// +build linux darwin
 
 package magicmime_test
 
 import (
 	"log"
+
+	"github.com/rakyll/magicmime"
 )
 
 func Example_typeByFile() {
-	if err := Open(MAGIC_MIME_TYPE | MAGIC_SYMLINK | MAGIC_ERROR); err != nil {
+	if err := magicmime.Open(magicmime.MAGIC_MIME_TYPE | magicmime.MAGIC_SYMLINK | magicmime.MAGIC_ERROR); err != nil {
 		log.Fatal(err)
 	}
-	defer Close()
+	defer magicmime.Close()
 
-	mimetype, err := TypeByFile("/path/to/file")
+	mimetype, err := magicmime.TypeByFile("/path/to/file")
 	if err != nil {
 		log.Fatalf("error occured during type lookup: %v", err)
 	}
