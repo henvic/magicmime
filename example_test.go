@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// +build linux darwin
+// +build linux darwin, !cgo
 
-package magicmime
+package magicmime_test
 
 import (
 	"log"
